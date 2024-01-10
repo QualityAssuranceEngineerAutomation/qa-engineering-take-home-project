@@ -1,13 +1,6 @@
 describe('Negative Testing', () => {
-    it('passes', () => {
+    it('negativeScenarios', () => {
      cy.visit('https://automationintesting.online/')
-     cy.get('#name.form-control').scrollIntoView()
-     cy.get('#name.form-control').type('Kim')
-     cy.get('#email.form-control').type('qatest@softwaretester.com')
-     cy.get('#phone.form-control').type('111111-1111')
-     cy.get('#subject.form-control').type('this is for testing!')
-     cy.get('#description.form-control').type('this is the description')
-
      cy.get('#name.form-control').scrollIntoView()
      cy.get('#name.form-control').clear()
      cy.get('#email.form-control').clear()
@@ -24,8 +17,28 @@ describe('Negative Testing', () => {
      cy.get('.alert').contains('Subject may not be blank')
      cy.get('.alert').contains('Message must be between 20 and 2000 characters.')
      cy.get('.alert').contains('Message may not be blank')
-    })
-         
-     
- 
+     cy.wait(4000)
+    cy.get('#name.form-control').scrollIntoView()
+    cy.get('#name.form-control').type('Tester')
+    cy.get('#email.form-control').type('qatest@softwaretester.com')
+    cy.get('#phone.form-control').type('111111-1111')
+    cy.get('#subject.form-control').type('this is for testing!')
+    cy.get('#description.form-control').type('this is the description')
+    cy.get('.btn').contains('Submit').click()
+     cy.get('.form-control.room-firstname').scrollIntoView().should('be.visible')
+     cy.get('.form-control.room-lastname').scrollIntoView().should('be.visible')
+     cy.get('.form-control.room-email').scrollIntoView().should('be.visible')
+     cy.get('.form-control.room-phone').scrollIntoView().should('be.visible')
+     cy.get('.btn.btn-outline-primary.float-right.book-room').scrollIntoView().click()
+
+     cy.get('.alert').contains('size must be between 11 and 21')
+     cy.get('.alert').contains('Firstname should not be blank')
+     cy.get('.alert').contains('must not be null')
+     cy.get('.alert').contains('Lastname should not be blank')
+     cy.get('.alert').contains('size must be between 3 and 18')
+     cy.get('.alert').contains('must not be empty')
+     cy.get('.alert').contains('must not be null')
+     cy.get('.alert').contains('size must be between 3 and 30')
+     cy.get('.alert').contains('must not be empty')
+    })   
  })

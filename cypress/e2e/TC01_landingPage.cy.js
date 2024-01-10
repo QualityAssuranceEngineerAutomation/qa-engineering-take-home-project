@@ -16,12 +16,25 @@ describe('E2E Testing', () => {
     cy.get('.btn').contains('Book this room').click()
     cy.get('.rbc-toolbar-label').contains('January 2024')
     cy.get('.rbc-button-link').contains('09')
-    cy.get('#.form-control').first().scrollIntoView().should('be.visible')
-    //cy.get("input[placeholder='Lastname'}]").type('QA-Last')
-    //cy.get("input[placeholder='Lastname'}]").type('QA-Last')
-    //cy.get('input[name="email"}]').type('tester@qa.com')
-    //cy.get('input[name="phone"}]').type('000000-0000')
-    //cy.get('.btn').contains('Book').click()
+    cy.wait(4000)
+    cy.get('.form-control.room-firstname').scrollIntoView().should('be.visible')
+    cy.get('.form-control.room-lastname').scrollIntoView().should('be.visible')
+    cy.get('.form-control.room-email').scrollIntoView().should('be.visible')
+    cy.get('.form-control.room-phone').scrollIntoView().should('be.visible')
+    cy.get('.btn.btn-outline-primary.float-right.book-room').scrollIntoView().click()
+
+
+    cy.get('.form-control.room-firstname').scrollIntoView().should('be.visible')
+    cy.get('.form-control.room-lastname').scrollIntoView().should('be.visible')
+    cy.get('.form-control.room-email').scrollIntoView().should('be.visible')
+    cy.get('.form-control.room-phone').scrollIntoView().should('be.visible')
+
+    cy.get('.form-control.room-firstname').scrollIntoView().type('QA-Firstname')
+    cy.get('.form-control.room-lastname').scrollIntoView().type('QA-lasttname')
+    cy.get('.form-control.room-email').scrollIntoView().type('qa@softwaretester.com')
+    cy.get('.form-control.room-phone').scrollIntoView().type('111-111-1111')
+    cy.get('.btn.btn-outline-primary.float-right.book-room').scrollIntoView().click()
+
   }) 
    
 })
