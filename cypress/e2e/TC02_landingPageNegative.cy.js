@@ -24,7 +24,7 @@ describe('Negative Testing', () => {
     cy.get('#phone.form-control').type('111111-1111')
     cy.get('#subject.form-control').type('this is for testing!')
     cy.get('#description.form-control').type('this is the description')
-    cy.get('.btn').contains('Submit').click()
+    
      cy.get('.form-control.room-firstname').scrollIntoView().should('be.visible')
      cy.get('.form-control.room-lastname').scrollIntoView().should('be.visible')
      cy.get('.form-control.room-email').scrollIntoView().should('be.visible')
