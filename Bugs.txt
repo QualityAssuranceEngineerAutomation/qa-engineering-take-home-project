@@ -1,0 +1,9 @@
+Text field validation
+Bug #1 Phone field allows for all text values
+Bug #2 A form field has an id or name attribute that the browser's autofill recognizes. However, it doesn't have an autocomplete attribute assigned. This might prevent the browser from correctly autofilling the form.
+Bug #3 The firstname field size validation is missing the field name in the alert message
+Bug #4 The lastname field size validation is missing the field name in the alert message
+Bug #5 The email field validation to check if it is empty or not is missing the field name in the alert message
+Calendar validation
+Bug #6 When user clicks on the Book button the calendar DOES NOT default to the next month it just stays on the current month.
+Bug #7 The UI renders differently when the user accesses the website in a Chrome browser vs Edge
